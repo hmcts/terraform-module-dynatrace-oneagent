@@ -8,10 +8,7 @@ resource "azurerm_virtual_machine_scale_set_extension" "dynatrace-oneagent" {
   type                         = lower(var.virtual_machine_os) == "windows" ? "oneAgentWindows" : "oneAgentLinux"
   type_handler_version         = var.type_handler_version
   auto_upgrade_minor_version   = var.auto_upgrade_minor_version
-
-  protected_settings = <<PROTECTED_SETTINGS
-    "${local.dynatrace_settings}"
-    PROTECTED_SETTINGS
+  protected_settings           = local.dynatrace_settings
 }
 
 resource "azurerm_virtual_machine_extension" "dynatrace-oneagent" {
@@ -24,8 +21,5 @@ resource "azurerm_virtual_machine_extension" "dynatrace-oneagent" {
   type                       = lower(var.virtual_machine_os) == "windows" ? "oneAgentWindows" : "oneAgentLinux"
   type_handler_version       = var.type_handler_version
   auto_upgrade_minor_version = var.auto_upgrade_minor_version
-
-  protected_settings = <<PROTECTED_SETTINGS
-    "${local.dynatrace_settings}"
-    PROTECTED_SETTINGS
+  protected_settings         = local.dynatrace_settings
 }

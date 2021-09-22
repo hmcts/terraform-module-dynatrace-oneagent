@@ -4,13 +4,13 @@ variable "auto_upgrade_minor_version" {
   type        = bool
 }
 
-variable "hostGroup" {
-  description = "Define the host group to which the VM belongs."
+variable "hostgroup" {
+  description = "Define the hostgroup to which the VM belongs."
   type        = string
   default     = null
 }
 
-variable "tenantId" {
+variable "tenant_id" {
   description = "The Dynatrace environment ID."
   type        = string
 }
