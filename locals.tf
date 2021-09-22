@@ -1,0 +1,3 @@
+locals {
+  dynatrace_settings = var.hostGroup == null && var.server == null ? "{ \"tenantId\" : \"[${var.tenantId}]\" , \"token\" : \"${var.token}\" }" : var.hostGroup != null && var.server == null ? "{ \"tenantId\" : \"[${var.tenantId}]\" , \"token\" : \"${var.token}\" , \"hostGroup\" : \"${var.hostgroup}\" }" : "{ \"tenantId\" : \"[${var.tenantId}]\" , \"token\" : \"${var.token}\" , \"hostGroup\" : \"${var.hostgroup}\" , \"server\" : \"[${var.server}]\" }"
+}
