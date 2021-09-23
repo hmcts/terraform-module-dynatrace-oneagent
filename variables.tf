@@ -21,7 +21,7 @@ variable "token" {
 }
 
 variable "type_handler_version" {
-  description = "Version of Dynatrace OneAgent - To find: az vm extension image list --location westeurope -p dynatrace.ruxit -o table"
+  description = "Version of Dynatrace OneAgent - To find: az vm extension image list --location uksouth -p dynatrace.ruxit -o table"
   default     = "2.3"
   type        = string
 }
