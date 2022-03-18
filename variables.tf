@@ -32,6 +32,12 @@ variable "server" {
   default     = null
 }
 
+variable "network_zone" {
+  description = "the network zone the oneagent is attached to i.e azure.cft"
+  type        = string
+  default     = "azure.cft"
+}
+
 variable "virtual_machine_os" {
   description = "Windows or Linux."
   type        = string
