@@ -59,3 +59,9 @@ variable "virtual_machine_id" {
   default     = ""
   type        = string
 }
+
+variable "tags" {
+  description = "Dynatrace OneAgent tags."
+  type        = map(any)
+  default     = null
+}
